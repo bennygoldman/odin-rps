@@ -33,13 +33,6 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let choice = prompt('choose rock, paper, or scissors')
 
-    // if (choice === null) {
-    //     // Handle cancellation
-    //     console.log('Game canceled.');
-    //     // You can choose to end the game or handle it in any other way you prefer
-    //     // For example, you can return a special value to indicate cancellation
-    //     return null;
-    // }
     const lowercaseChoice = choice.toLowerCase();
 
     if (lowercaseChoice === 'rock' || choice === 'paper' || choice === 'scissors') {
