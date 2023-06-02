@@ -1,23 +1,37 @@
 let playerScore = 0;
 let computerScore = 0;
 const winningScore = 3;
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', logText))
 
+function logText(e) {
 
-function game() {
-
-    while (playerScore < winningScore && computerScore < winningScore) {
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-        if (playerScore === winningScore) {
-            console.log('GAME OVER! YOU WIN! FINAL SCORE:');
-        } else if (computerScore === winningScore) {
-            console.log('GAME OVER! YOU LOSE! FINAL SCORE:');
-        }
-        displayCurrentScore();
-    }
-
+    const computerSelection = getComputerChoice();
+    const playerSelection = this.classList.value;
+    playRound(playerSelection, computerSelection);
+    // if (playerScore === winningScore) {
+    //     console.log('GAME OVER! YOU WIN! FINAL SCORE:');
+    // } else if (computerScore === winningScore) {
+    //     console.log('GAME OVER! YOU LOSE! FINAL SCORE:');
+    // }
+    // displayCurrentScore();
 }
+// function game() {
+
+//     while (playerScore < winningScore && computerScore < winningScore) {
+
+//         const playerSelection = getPlayerChoice();
+//         const computerSelection = getComputerChoice();
+//         playRound(playerSelection, computerSelection);
+//         if (playerScore === winningScore) {
+//             console.log('GAME OVER! YOU WIN! FINAL SCORE:');
+//         } else if (computerScore === winningScore) {
+//             console.log('GAME OVER! YOU LOSE! FINAL SCORE:');
+//         }
+//         displayCurrentScore();
+//     }
+
+// }
 function getComputerChoice() {
     let randomNumber = (Math.floor(Math.random() * 3))
     switch (randomNumber) {
@@ -30,18 +44,16 @@ function getComputerChoice() {
     }
 };
 
-function getPlayerChoice() {
-    let choice = prompt('choose rock, paper, or scissors')
-
-    const lowercaseChoice = choice.toLowerCase();
-
-    if (lowercaseChoice === 'rock' || choice === 'paper' || choice === 'scissors') {
-        return lowercaseChoice;
-    } else {
-        console.log('Invalid choice. Please try again.');
-        return getPlayerChoice();
-    }
-}
+// function getPlayerChoice() {
+//     let choice = prompt('choose rock, paper, or scissors')
+//     const lowercaseChoice = choice.toLowerCase();
+//     if (lowercaseChoice === 'rock' || lowercaseChoice === 'paper' || lowercaseChoice === 'scissors') {
+//         return lowercaseChoice;
+//     } else {
+//         console.log('Invalid choice. Please try again.');
+//         return getPlayerChoice();
+//     }
+// }
 
 function playRound(playerSelection, computerSelection) {
 
@@ -74,4 +86,4 @@ function displayCurrentScore() {
     console.log(currentScore);
 }
 
-game();
+// game();
