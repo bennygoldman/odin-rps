@@ -2,21 +2,9 @@ let playerScore = 0;
 let computerScore = 0;
 const winningScore = 3;
 const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener('click', logText))
 
-function logText(e) {
-
-    const computerSelection = getComputerChoice();
-    const playerSelection = this.classList.value;
-    playRound(playerSelection, computerSelection);
-    // if (playerScore === winningScore) {
-    //     console.log('GAME OVER! YOU WIN! FINAL SCORE:');
-    // } else if (computerScore === winningScore) {
-    //     console.log('GAME OVER! YOU LOSE! FINAL SCORE:');
-    // }
-    // displayCurrentScore();
-}
 // function game() {
+buttons.forEach(button => button.addEventListener('click', playRound))
 
 //     while (playerScore < winningScore && computerScore < winningScore) {
 
@@ -29,7 +17,7 @@ function logText(e) {
 //             console.log('GAME OVER! YOU LOSE! FINAL SCORE:');
 //         }
 //         displayCurrentScore();
-//     }
+// }
 
 // }
 function getComputerChoice() {
@@ -55,14 +43,10 @@ function getComputerChoice() {
 //     }
 // }
 
-function playRound(playerSelection, computerSelection) {
-
-    // if (playerSelection === null || computerSelection === null) {
-    //     // Handle cancellation
-    //     console.log('Game canceled.');
-    //     return;
-    // }
-
+// function playRound(playerSelection, computerSelection) {
+function playRound() {
+    const computerSelection = getComputerChoice();
+    const playerSelection = this.classList.value;
     const playerSelectionFormatted = (playerSelection.charAt(0).toUpperCase()) + playerSelection.slice(1)
     const computerSelectionFormatted = (computerSelection.charAt(0).toUpperCase()) + computerSelection.slice(1)
 
