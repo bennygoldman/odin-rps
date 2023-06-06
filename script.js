@@ -13,10 +13,10 @@ const choices = document.querySelectorAll('.choice');
 initalizeGame();
 
 function initalizeGame() {
-    choices.forEach(choice => choice.addEventListener('click', game))
+    choices.forEach(choice => choice.addEventListener('click', playGame))
 }
 
-function game() {
+function playGame() {
     const computerSelection = getComputerChoice();
     const playerSelection = this.id;
     if (playerScore < winningScore && computerScore < winningScore) {
@@ -67,7 +67,7 @@ function displayCurrentScore() {
 }
 
 function endGame() {
-    choices.forEach(choice => choice.removeEventListener('click', game));
+    choices.forEach(choice => choice.removeEventListener('click', playGame));
 
     if (playerScore === winningScore) {
         finalScorePara.textContent = 'GAME OVER! YOU WIN! FINAL SCORE:';
