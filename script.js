@@ -3,8 +3,8 @@ let computerScore = 0;
 const winningScore = 3;
 const buttons = document.querySelectorAll('button');
 
-// function game() {
 buttons.forEach(button => button.addEventListener('click', playRound))
+// function game() {
 
 //     while (playerScore < winningScore && computerScore < winningScore) {
 
